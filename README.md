@@ -2,7 +2,33 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+### Introduction
+The purpose of the PID Controller Project was to code a PID Controller, and tune the PID hyperparameters by applying the general processing flow as described in the lessons. Once the PID Controller is tuned, test the solution on the provided simulator. The simulator provides cross-track error (CTE), speed, and steering angle data via local websocket. The PID (Proportional/Integral/Differential) controller must respond with steering and throttle commands to drive the car reliably around the simulator track.
 
+### Rubric Points Addressed
+
+#### Describe the effect each of the P, I, D components had in your implementation.
+
+The P, for Proportional, component had the most direct effect on the car's behavior. It causes the car to steer proportional (and opposite) to the car's distance from the lane center (which is the CTE) - if the car is far to the right it steers hard to the left, if it's slightly to the left it steers slightly to the right.
+
+The D, or Differential, component counteracts the P component's tendency to ring and overshoot the center line. A properly tuned D parameter will cause the car to approach the center line smoothly without ringing.
+
+The I, for Integral, component counteracts a bias in the CTE which prevents the P-D controller from reaching the center line. This bias can take several forms, such as a steering drift (as in the Control unit lessons), but I believe that in this particular implementation the I component, at least in my code, had little effect, since it is set to zero.
+
+The final PID controller implementation performed much like in the following video.
+
+|Lake Track|
+|:--------:|
+|[![PID Controller Implementation](images/lake_track.png)](https://youtu.be/O9V2yhQ9rbM)|
+
+#### Describe how the final hyperparameters were chosen.
+Hyperparameters were tuned manually and with a lot of trial and error. The final values that the PID Controller should be run with is: (P: -0.13, I: 0.0, D: -0.87). 
+
+### Use the following command to run the PID Controller: '''./pid -0.13 0 -0.87'''
+
+I also implemented a PID controller for the throttle, to maximize the car's speed around the track. The throttle PID controller is fed the magnitude of the CTE because it doesn't make sense to throttle up for right-side CTE and down for left-side CTE, for example. For this reason the throttle controller doesn't include an I component, which would only grow indefinitely. The throttle controller was also fine-tuned using the same Twiddle loop, simultaneously with the steering controller. Though this is not an ideal setup (tuning parameters for two different controllers simultaneously), it still mostly converged to a good (if I do say so myself) solution.
+
+---
 ## Dependencies
 
 * cmake >= 3.5
