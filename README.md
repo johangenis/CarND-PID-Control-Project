@@ -19,7 +19,7 @@ The final PID controller implementation performed much like in the following vid
 
 |Lake Track: PID Controller Implementation|
 |:--------:|
-|[![PID Controller Implementation](https://github.com/johangenis/CarND-PID-Control-Project/blob/master/PIDController.png)](https://youtu.be/O9V2yhQ9rbM)|
+|[![PID Controller Implementation](https://github.com/johangenis/CarND-PID-Control-Project/blob/master/PIDController.jpg)](https://youtu.be/O9V2yhQ9rbM)|
 
 #### Describe how the final hyperparameters were chosen.
 Hyperparameters were tuned manually and with a lot of trial and error. The final values that the PID Controller should be run with is: (P: -0.13, I: 0.0, D: -0.87). 
