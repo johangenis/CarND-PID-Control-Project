@@ -17,7 +17,7 @@ The I, for Integral, component counteracts a bias in the CTE which prevents the 
 
 The final PID controller implementation performed much like in the following video.
 
-|Lake Track|
+|Lake Track: PID Controller Implementation|
 |:--------:|
 |[![PID Controller Implementation](https://github.com/johangenis/CarND-PID-Control-Project/blob/master/PIDController.png)](https://youtu.be/O9V2yhQ9rbM)|
 
