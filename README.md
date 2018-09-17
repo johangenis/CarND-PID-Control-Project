@@ -26,7 +26,7 @@ Hyperparameters were tuned manually and with a lot of trial and error. The final
 
 **Use the following command to run the PID Controller:** ```./pid -0.13 0 -0.87```
 
-I also implemented a PID controller for the throttle, to maximize the car's speed around the track. The throttle PID controller is fed the magnitude of the CTE because it doesn't make sense to throttle up for right-side CTE and down for left-side CTE, for example. For this reason the throttle controller doesn't include an I component, which would only grow indefinitely. The throttle controller was also fine-tuned using the same Twiddle loop, simultaneously with the steering controller. Though this is not an ideal setup (tuning parameters for two different controllers simultaneously), it still mostly converged to a good (if I do say so myself) solution.
+
 
 ---
 ## Dependencies
